@@ -1,0 +1,3 @@
+ONI: https://data.humdata.org/dataset/monthly-oceanic-nino-index-oni
+ONI2: https://www.kaggle.com/datasets/shabanamir/enso-data
+libreria: https://github.com/EquipoAnaliticaXM/API_XM

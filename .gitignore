@@ -1,0 +1,21 @@
+# ── Librería externa (clonar con: git clone https://github.com/EquipoAnaliticaXM/API_XM) ──
+API_XM/
+
+# ── Archivos del curso / materiales privados ──────────────────────────────────
+01_mla_proyecto.pdf
+ml_machinelearninglandscape_SamuelOviedoPaz.ipynb
+
+# ── Claude Code ───────────────────────────────────────────────────────────────
+.claude/
+CLAUDE.md
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+
+# ── macOS ─────────────────────────────────────────────────────────────────────
+.DS_Store
