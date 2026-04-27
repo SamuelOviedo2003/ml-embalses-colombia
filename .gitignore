@@ -4,6 +4,7 @@ API_XM/
 # ── Archivos del curso / materiales privados ──────────────────────────────────
 01_mla_proyecto.pdf
 ml_machinelearninglandscape_SamuelOviedoPaz.ipynb
+report/
 
 # ── Claude Code ───────────────────────────────────────────────────────────────
 .claude/
