@@ -1,3 +1,27 @@
-ONI: https://data.humdata.org/dataset/monthly-oceanic-nino-index-oni
-ONI2: https://www.kaggle.com/datasets/shabanamir/enso-data
-libreria: https://github.com/EquipoAnaliticaXM/API_XM
+# Referencias del proyecto — Embalses y riesgo energético Colombia
+
+## Datos y APIs
+
+libreria_xm: https://github.com/EquipoAnaliticaXM/API_XM
+era5_docs: https://confluence.ecmwf.int/display/CKB/ERA5%3A+data+documentation
+copernicus: https://cds.climate.copernicus.eu/
+
+## Coyuntura El Niño 2026
+
+eltiempo_90pct: https://www.eltiempo.com/vida/medio-ambiente/probabilidad-de-un-super-el-nino-es-del-90-en-septiembre-de-2026-asi-afectaria-a-la-energia-en-colombia-3547125
+ideam_alerta_temprana: https://www.ideam.gov.co/sala-de-prensa/noticia/probable-desarrollo-de-el-nino-en-el-segundo-semestre-de-2026-activa-alerta-temprana-en-el-pais
+ideam_90pct: https://www.ideam.gov.co/sala-de-prensa/noticia/ideam-y-minambiente-alertan-de-90-de-probabilidad-de-llegada-del-fenomeno-de-el-nino-para-septiembre
+elcolombiano_super_nino: https://www.elcolombiano.com/negocios/super-el-nino-2026-colombia-embalses-apagon-gas-importado-BA35603288
+portafolio_embalses_caida: https://www.portafolio.co/energia/nivel-de-embalses-caen-de-80-a-63-en-3-meses-y-aumentan-riesgos-para-el-sistema-por-fenomeno-de-el-nino-en-491972
+
+## Crisis energética histórica (apagón años 90)
+
+eltiempo_apagon: https://www.eltiempo.com/mas-contenido/los-desafios-para-no-repetir-la-historia-del-apagon-nacional-860832
+celsia_apagon_30_anos: https://www.celsia.com/es/podcasts/hace-30-anos-colombia-se-apago/
+elespectador_hidro_termica: https://www.elespectador.com/economia/sin-las-energias-hidraulica-y-termica-colombia-se-hubiera-apagado/
+minenergia_informe: https://repositoriobi.minenergia.gov.co/bitstream/handle/123456789/1956/1928.pdf?sequence=1&isAllowed=y
+
+## Informes técnicos
+
+xm_informe_anual_clima: https://informeanual.xm.com.co/informe/pages/xm/22-condiciones-climaticas.html
+ideam_informe_climatico: https://bart.ideam.gov.co/wrfideam/new_modelo/CPT/informe/Informe.pdf
