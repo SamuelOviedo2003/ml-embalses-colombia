@@ -22,3 +22,9 @@ env/
 .DS_Store
 
 *.grib
+*.nc
+*.idx
+
+era5_diario_embalses.csv
+
+FourHours/
