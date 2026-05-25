@@ -44,12 +44,14 @@ El Niño en Colombia suele provocar déficits de precipitación especialmente en
 ## Fuentes de datos
 
 ### Fuente 1: SIMEM / XM (API oficial)
+
 - **Qué es:** Sistema de Información del Mercado de Energía Mayorista de Colombia, operado por XM.
 - **Acceso:** Librería `pydataxm` ([github.com/EquipoAnaliticaXM/API_XM](https://github.com/EquipoAnaliticaXM/API_XM))
 - **Variables usadas:** `VolumenUtilPorcentaje` (TARGET), `AportesHidricosMasa` (features hidrológicas)
 - **Cobertura:** Desde 2000 hasta hoy, actualización diaria.
 
 ### Fuente 2: ERA5 / Copernicus (archivo local `.grib`)
+
 - **Qué es:** Reanálisis climático global de ECMWF a resolución 0.25°, distribuido por el Copernicus Climate Change Service.
 - **Archivo:** `Datasets/combinado.grib` (no versionado en git por tamaño)
 - **Variables extraídas:** `t2m`, `u10`, `v10`, `msl`, `tp`, `ro`, `sro`, `swvl1`, `sst` (Niño 3.4)
@@ -62,37 +64,37 @@ El Niño en Colombia suele provocar déficits de precipitación especialmente en
 
 ### TARGET
 
-| Variable | Unidad | Descripción |
-|----------|--------|-------------|
-| `reserva_pct` | % | Porcentaje del volumen útil del embalse respecto a su capacidad total (0-100). Valores >100 indican vertimiento (son válidos). Umbral crítico histórico: ~30%. |
+| Variable      | Unidad | Descripción                                                                                                                                                    |
+| ------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `reserva_pct` | %      | Porcentaje del volumen útil del embalse respecto a su capacidad total (0-100). Valores >100 indican vertimiento (son válidos). Umbral crítico histórico: ~30%. |
 
 ### Features hidrológicas (SIMEM/XM)
 
-| Variable | Unidad | Descripción |
-|----------|--------|-------------|
-| `aportes_masa` | m³ | Volumen total de agua que entra al embalse (afluencias desde lluvia, escorrentía y ríos). Agregado por región hidrológica. |
-| `media_historica_masa` | m³ | Promedio histórico de aportes para el mismo período. Sirve como línea base de referencia. |
-| `aportes_vs_media_pct` | % | `aportes_masa / media_historica_masa x 100`. Valor menor a 100 indica sequía; mayor a 100 indica año húmedo. |
+| Variable               | Unidad | Descripción                                                                                                                |
+| ---------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------- |
+| `aportes_masa`         | m³     | Volumen total de agua que entra al embalse (afluencias desde lluvia, escorrentía y ríos). Agregado por región hidrológica. |
+| `media_historica_masa` | m³     | Promedio histórico de aportes para el mismo período. Sirve como línea base de referencia.                                  |
+| `aportes_vs_media_pct` | %      | `aportes_masa / media_historica_masa x 100`. Valor menor a 100 indica sequía; mayor a 100 indica año húmedo.               |
 
 ### Features meteorológicas (ERA5 / Copernicus)
 
-| Variable | Unidad | Descripción |
-|----------|--------|-------------|
-| `t2m` | °C | Temperatura del aire a 2m. Afecta evaporación del embalse y demanda energética. |
-| `u10` | m/s | Componente zonal del viento a 10m (este = positivo). |
-| `v10` | m/s | Componente meridional del viento a 10m (norte = positivo). |
-| `wind_speed` | m/s | Magnitud del viento: `sqrt(u10^2 + v10^2)`. |
-| `msl` | hPa | Presión al nivel del mar. Baja presión indica mayor probabilidad de lluvia; alta presión indica condiciones secas. |
-| `tp` | mm | Precipitación total acumulada. Variable clave para recarga de embalses. |
-| `ro` | mm | Escorrentía total (sobre y bajo la superficie). Puente entre lluvia y aporte al embalse. |
-| `sro` | mm | Escorrentía superficial. Responde rápido a lluvias intensas. |
-| `swvl1` | m³/m³ | Humedad volumétrica del suelo, capa superficial. Influye en capacidad de generar escorrentía. |
+| Variable     | Unidad | Descripción                                                                                                        |
+| ------------ | ------ | ------------------------------------------------------------------------------------------------------------------ |
+| `t2m`        | °C     | Temperatura del aire a 2m. Afecta evaporación del embalse y demanda energética.                                    |
+| `u10`        | m/s    | Componente zonal del viento a 10m (este = positivo).                                                               |
+| `v10`        | m/s    | Componente meridional del viento a 10m (norte = positivo).                                                         |
+| `wind_speed` | m/s    | Magnitud del viento: `sqrt(u10^2 + v10^2)`.                                                                        |
+| `msl`        | hPa    | Presión al nivel del mar. Baja presión indica mayor probabilidad de lluvia; alta presión indica condiciones secas. |
+| `tp`         | mm     | Precipitación total acumulada. Variable clave para recarga de embalses.                                            |
+| `ro`         | mm     | Escorrentía total (sobre y bajo la superficie). Puente entre lluvia y aporte al embalse.                           |
+| `sro`        | mm     | Escorrentía superficial. Responde rápido a lluvias intensas.                                                       |
+| `swvl1`      | m³/m³  | Humedad volumétrica del suelo, capa superficial. Influye en capacidad de generar escorrentía.                      |
 
 ### Feature oceánica (ERA5, señal El Niño)
 
-| Variable | Unidad | Descripción |
-|----------|--------|-------------|
-| `sst_nino` | °C | Temperatura superficial del mar en la región Niño 3.4 (5°N, 80°W). Serie global única. Anomalías positivas indican El Niño, lo que se traduce en menor lluvia y descenso de embalses. |
+| Variable   | Unidad | Descripción                                                                                                                                                                           |
+| ---------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `sst_nino` | °C     | Temperatura superficial del mar en la región Niño 3.4 (5°N, 80°W). Serie global única. Anomalías positivas indican El Niño, lo que se traduce en menor lluvia y descenso de embalses. |
 
 ---
 
@@ -116,8 +118,8 @@ Las variables ERA5 cubren solo 2013-2024 (límite del archivo `.grib` local); fu
 
 ## Scripts
 
-| Script | Descripción |
-|--------|-------------|
+| Script                 | Descripción                                                                                                                               |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | `construir_dataset.py` | Pipeline completo: descarga SIMEM, carga ERA5 desde `.grib`, une y guarda `Datasets/dataset_final.csv`. Tarda aproximadamente 20 minutos. |
 
 ---
@@ -133,7 +135,9 @@ ml-embalses-colombia/
   Datasets/
     combinado.grib               ERA5 local (no versionado en git)
     dataset_final.csv            generado por construir_dataset.py
-  ML - Embalses_Untitled1.ipynb  EDA
+  Scripts/                       Scripts varios de apoyo
+  Entrega 1/                     Contiene los archivos relacionados con la Entrega 1
+  Entrega 2/                     Contiene los archivos relacionados con la Entrega 2
+  Entrega 3/                     Contiene los archivos relacionados con la Entrega 3
+
 ```
-
-
